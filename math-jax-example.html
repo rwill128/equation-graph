@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>math.js | pretty printing with MathJax</title>
+
+    <script src="https://unpkg.com/mathjs@7.2.0/dist/math.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML.js"></script>
+
+</head>
+<body>
+<table>
+    <tr>
+        <td><div id="pretty">$$$$</div></td>
+    </tr>
+</table>
+
+<script>
+    const pretty = document.getElementById('pretty')
+    let parenthesis = 'keep'
+
+    // initialize with an example expression
+    pretty.innerHTML = '$$' + math.parse("a(b+c)").toTex({parenthesis: parenthesis}) + '$$'
+
+</script>
+
+</body>
+</html>
